@@ -19,6 +19,10 @@ mongoose.connect(process.env.MONGO_URI)
     })
     .catch(console.error);
 
+app.get('/', (req, res) => {
+    res.send('Server is running');
+})
+
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/mybooks', myBookRoutes);
