@@ -1,0 +1,288 @@
+/* Container for BookCard */
+.book-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Book image */
+.book-card img {
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+/* Title styling */
+.book-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 6px;
+    color: #333;
+}
+
+/* Author styling */
+.book-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+/* Button styles */
+.book-card button {
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.book-card button:hover:enabled {
+    background-color: #16a34a;
+}
+
+.book-card button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Container for My Book Card */
+.my-book-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fafafa;
+    transition: box-shadow 0.2s ease;
+}
+
+.my-book-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.my-book-card img {
+    height: 128px;
+    width: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.my-book-details {
+    flex: 1;
+}
+
+.my-book-details h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 6px;
+    color: #333;
+}
+
+.my-book-details p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.my-book-details label {
+    font-size: 14px;
+    margin-right: 8px;
+    color: #333;
+}
+
+.my-book-details select {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #2563eb; /* Tailwind's blue-600 */
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    border-bottom: 1px solid #1d4ed8;
+}
+
+/* Logo or title */
+.navbar .brand {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Right side navigation links */
+.navbar .nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #cbd5e1;
+}
+
+/* User email and logout */
+.navbar .nav-links span {
+    font-size: 14px;
+}
+
+.navbar .nav-links button {
+    background-color: #ef4444; /* Tailwind's red-500 */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.navbar .nav-links button:hover {
+    background-color: #dc2626;
+}
+
+/* Container for Auth */
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+}
+
+.auth-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1e293b; /* slate-800 */
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.auth-form input {
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid #cbd5e1; /* slate-300 */
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.auth-form input:focus {
+    border-color: #2563eb; /* blue-600 */
+}
+
+.auth-form button {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.auth-form button:hover {
+    background-color: #1d4ed8; /* blue-700 */
+}
+
+.auth-toggle {
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+    color: #334155; /* slate-700 */
+}
+
+.auth-toggle button {
+    background: none;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Home grid container */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+/* Medium screens */
+@media (min-width: 640px) {
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+    .home-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Loading text */
+.home-loading {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+/* Container for MyBooks page */
+.my-books-container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Message for empty list */
+.my-books-empty {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-top: 40px;
+}
