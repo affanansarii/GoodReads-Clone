@@ -18,7 +18,10 @@ app.use(cors({
     credentials: true
 }));
 
-app.get('/', (_req, res) => res.send('My Library API OK'));
+app.get("/", (req, res) => {
+    res.send("GoodReads Clone Backend is running 🚀");
+});
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
