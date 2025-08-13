@@ -12,20 +12,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = [
-    "https://good-reads-clone-n26rzsacl-affan-ansaris-projects-52c0ab0f.vercel.app", // your frontend
-];
-
+const allowed = process.env.CLIENT_URL?.split(',') || ['http://localhost:5173'];
 app.use(cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true // important for cookies/JWT
+    origin: allowed,
+    credentials: true
 }));
 
-app.get("/", (req, res) => {
-    res.send("GoodReads Clone Backend is running 🚀");
-});
-
+app.get('/', (_req, res) => res.send('My Library API OK'));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
