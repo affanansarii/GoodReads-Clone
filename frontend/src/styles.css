@@ -1,0 +1,11 @@
+/* minimal polish to complement Bootstrap */
+body {
+    background: #f8f9fa;
+}
+.card img {
+    object-fit: cover;
+    height: 240px;
+}
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
