@@ -9,7 +9,6 @@ import myBookRoutes from './routes/myBookRoutes.js';
 
 const app = express();
 
-app.use(express.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
@@ -29,6 +28,8 @@ app.use(cors({
     },
     credentials: true
 }));
+
+app.use(express.json());
 
 app.get('/', (_req, res) => res.send('My Library API OK'));
 
