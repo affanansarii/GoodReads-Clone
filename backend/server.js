@@ -12,9 +12,21 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowed = process.env.CLIENT_URL?.split(',') || ['http://localhost:5173'];
+const allowedOrigins = [
+    "https://good-reads-clone-asmxw1mc3-affan-ansaris-projects-52c0ab0f.vercel.app",
+    "http://localhost:3000"
+];
+
 app.use(cors({
-    origin: allowed,
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true
 }));
 
