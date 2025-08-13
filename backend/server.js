@@ -12,10 +12,14 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowed = process.env.CLIENT_URL?.split(',') || ['http://localhost:5173'];
+const allowedOrigins = [
+    "https://good-reads-clone-n26rzsacl-affan-ansaris-projects-52c0ab0f.vercel.app", // your frontend
+];
+
 app.use(cors({
-    origin: allowed,
-    credentials: true
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true // important for cookies/JWT
 }));
 
 app.get("/", (req, res) => {
