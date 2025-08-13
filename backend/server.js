@@ -9,27 +9,14 @@ import myBookRoutes from './routes/myBookRoutes.js';
 
 const app = express();
 
+app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = [
-    "https://good-reads-clone-asmxw1mc3-affan-ansaris-projects-52c0ab0f.vercel.app",
-    "http://localhost:3000"
-];
-
+const allowed = process.env.CLIENT_URL?.split(',') || ['http://localhost:5173'];
 app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl)
-        if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
+    origin: allowed,
     credentials: true
 }));
-
-app.use(express.json());
 
 app.get('/', (_req, res) => res.send('My Library API OK'));
 
